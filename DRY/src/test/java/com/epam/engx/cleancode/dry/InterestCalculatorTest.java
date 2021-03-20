@@ -10,41 +10,41 @@ import static org.junit.Assert.assertEquals;
 public class InterestCalculatorTest {
 
     @Test
-    public void shouldCalculateZeroInterestIfAccountStartedBeforeBonusAge() {
+    public void calculateZeroInterestIfAccountStartedBeforeBonusAge() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 22, 20), 0);
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 20, 7), 0);
         assertInterest(reduceStartDate(InterestCalculatorTestHelper.makeAccountDetails(100, 20, 6)), 0);
     }
 
     @Test
-    public void shouldCalculateInterestFor1YearAccount() {
+    public void calculateInterestForOneYearAccount() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 20, 1), 4.5);
     }
 
     @Test
-    public void shouldCalculateInterestForSeveralYearsAccount() {
+    public void calculateInterestForSeveralYearsAccount() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 20, 6), 27);
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 20, 5), 22.5);
     }
 
     @Test
-    public void shouldCalculateInterestDependingOnBalance() {
+    public void calculateInterestDependingOnBalance() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(200, 20, 5), 45);
     }
 
     @Test
-    public void shouldCalculateNormalInterestFor59YearsOld() {
+    public void calculateNormalInterest() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 59, 5), 22.5);
     }
 
     @Test
-    public void shouldCalculateSeniorInterestFor60YearsOld() {
+    public void calculateSeniorInterest() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 60, 1), 5.5);
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 61, 5), 27.5);
     }
 
     @Test
-    public void shouldCalculateZeroInterestIfBalanceIsZero() {
+    public void calculateZeroInterest() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(0, 60, 5), 0);
     }
 

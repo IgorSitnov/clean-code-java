@@ -17,32 +17,32 @@ public class OrderTest {
     private Order order = new Order();
 
     @Test
-    public void shouldGetProducts() {
+    public void getProducts() {
         ArrayList<Product> products = getList(new AvailableProductStub(), new AvailableProductStub());
         order.setProducts(products);
         assertEquals(products, order.getProducts());
     }
 
     @Test
-    public void shouldCalculateZeroIfOrderContainsNoProduct() {
+    public void orderContainsNoProduct() {
         order.setProducts(new ArrayList<Product>());
         assertEquals(0.0, order.getPriceOfAvailableProducts(), DELTA);
     }
 
     @Test
-    public void shouldCalculateZeroIfOrderContainsOnlyUnavailableProducts() {
+    public void orderContainsOnlyUnavailableProducts() {
         order.setProducts(getList(new UnavailableProductStub(), new UnavailableProductStub()));
         assertEquals(0.0, order.getPriceOfAvailableProducts(), DELTA);
     }
 
     @Test
-    public void shouldCalculateTwentyIfOrderContainsTwoAvailable10PriceProducts() {
+    public void orderContainsTwoAvailableProducts() {
         order.setProducts(getList(new AvailableProductStub(), new AvailableProductStub()));
         assertEquals(20.0, order.getPriceOfAvailableProducts(), DELTA);
     }
 
     @Test
-    public void shouldCalculateTwentyIfOrderContainsTwoAvailable10PriceProductsWithOtherUnavailableProducts() {
+    public void orderContainsTwoAvailableProductsWithOtherUnavailableProducts() {
         order.setProducts(getList(new UnavailableProductStub(), new AvailableProductStub(),
                 new AvailableProductStub(), new UnavailableProductStub()));
         assertEquals(20.0, order.getPriceOfAvailableProducts(), DELTA);
