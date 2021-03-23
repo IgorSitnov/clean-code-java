@@ -13,10 +13,11 @@ public class CollectionOrderService implements OrderService {
     private NotificationManager notificationManager;
 
     public void submitOrder(Order order) {
-        if (collectionService.isEligibleForCollection(order))
-            notificationManager.notifyCustomer(Message.READY_FOR_COLLECT, NotificationMessage.INFO.getLevel());
-        else
-            notificationManager.notifyCustomer(Message.IMPOSSIBLE_TO_COLLECT, NotificationMessage.CRITICAL.getLevel());
+        if (collectionService.isEligibleForCollection(order)) {
+            notificationManager.notifyCustomer(Message.READY_FOR_COLLECT, NotificationMessage.INFO);
+        } else {
+            notificationManager.notifyCustomer(Message.IMPOSSIBLE_TO_COLLECT, NotificationMessage.CRITICAL);
+        }
     }
 
     public void setCollectionService(CollectionService collectionService) {

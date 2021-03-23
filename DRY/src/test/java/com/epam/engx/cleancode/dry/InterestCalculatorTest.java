@@ -10,41 +10,41 @@ import static org.junit.Assert.assertEquals;
 public class InterestCalculatorTest {
 
     @Test
-    public void calculateZeroInterestIfAccountStartedBeforeBonusAge() {
+    public void shouldCalculateZeroInterestIfAccountStartedBeforeBonusAge() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 22, 20), 0);
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 20, 7), 0);
         assertInterest(reduceStartDate(InterestCalculatorTestHelper.makeAccountDetails(100, 20, 6)), 0);
     }
 
     @Test
-    public void calculateInterestForOneYearAccount() {
+    public void shouldCalculateInterestForOneYearAccount() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 20, 1), 4.5);
     }
 
     @Test
-    public void calculateInterestForSeveralYearsAccount() {
+    public void shouldCalculateInterestForSeveralYearsAccount() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 20, 6), 27);
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 20, 5), 22.5);
     }
 
     @Test
-    public void calculateInterestDependingOnBalance() {
+    public void shouldCalculateInterestDependingOnBalance() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(200, 20, 5), 45);
     }
 
     @Test
-    public void calculateNormalInterest() {
+    public void shouldCalculateNormalInterest() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 59, 5), 22.5);
     }
 
     @Test
-    public void calculateSeniorInterest() {
+    public void shouldCalculateSeniorInterest() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 60, 1), 5.5);
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 61, 5), 27.5);
     }
 
     @Test
-    public void calculateZeroInterest() {
+    public void shouldCalculateZeroInterest() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(0, 60, 5), 0);
     }
 
