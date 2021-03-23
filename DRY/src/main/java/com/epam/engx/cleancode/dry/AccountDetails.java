@@ -4,9 +4,6 @@ import com.epam.engx.cleancode.dry.thirdpartyjar.Account;
 import com.epam.engx.cleancode.dry.thirdpartyjar.DateCalculator;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.Date;
 
 public class AccountDetails implements Account {
