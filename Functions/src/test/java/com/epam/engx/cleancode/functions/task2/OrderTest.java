@@ -36,13 +36,13 @@ public class OrderTest {
     }
 
     @Test
-    public void shouldCalculateTwentyIfOrderContainsTwoAvailable10PriceProducts() {
+    public void shouldCalculateTwentyIfOrderContainsTwoAvailableProducts() {
         order.setProducts(getList(new AvailableProductStub(), new AvailableProductStub()));
         assertEquals(20.0, order.getPriceOfAvailableProducts(), DELTA);
     }
 
     @Test
-    public void shouldCalculateTwentyIfOrderContainsTwoAvailable10PriceProductsWithOtherUnavailableProducts() {
+    public void shouldCalculateTwentyIfOrderContainsTwoAvailableProductsWithOtherUnavailableProducts() {
         order.setProducts(getList(new UnavailableProductStub(), new AvailableProductStub(),
                 new AvailableProductStub(), new UnavailableProductStub()));
         assertEquals(20.0, order.getPriceOfAvailableProducts(), DELTA);

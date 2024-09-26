@@ -1,13 +1,13 @@
 package com.epam.engx.cleancode.dry;
 
 import com.epam.engx.cleancode.dry.thirdpartyjar.Account;
+import com.epam.engx.cleancode.dry.thirdpartyjar.DateCalculator;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 public class AccountDetails implements Account {
     private Date birth;
-    private int age;
     private BigDecimal balance;
     private Date startDate;
 
@@ -39,11 +39,6 @@ public class AccountDetails implements Account {
     }
 
     public int getAge() {
-        return age;       // should depend on current time
+        return DateCalculator.durationBetweenDatesInYears(birth, new Date());
     }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
 }

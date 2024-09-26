@@ -19,7 +19,7 @@ public class CollectionOrderServiceTest {
     private final NotificationManagerMock notificationManagerMock = new NotificationManagerMock();
 
     @Test
-    public void shouldSubmitCollectionOrder() {
+    public void submitCollectionOrder() {
         helper.setCollectionService(collectOrderService, new TrueCollectionServiceStub());
         helper.setNotificationManager(notificationManagerMock, collectOrderService);
 
@@ -30,7 +30,7 @@ public class CollectionOrderServiceTest {
     }
 
     @Test
-    public void shouldNotSubmitCollectionOrder() {
+    public void notSubmitCollectionOrder() {
         helper.setCollectionService(collectOrderService, new FalseCollectionServiceStub());
         helper.setNotificationManager(notificationManagerMock, collectOrderService);
 

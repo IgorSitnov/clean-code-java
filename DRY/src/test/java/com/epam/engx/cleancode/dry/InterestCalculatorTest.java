@@ -17,7 +17,7 @@ public class InterestCalculatorTest {
     }
 
     @Test
-    public void shouldCalculateInterestFor1YearAccount() {
+    public void shouldCalculateInterestForOneYearAccount() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 20, 1), 4.5);
     }
 
@@ -33,18 +33,18 @@ public class InterestCalculatorTest {
     }
 
     @Test
-    public void shouldCalculateNormalInterestFor59YearsOld() {
+    public void shouldCalculateNormalInterest() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 59, 5), 22.5);
     }
 
     @Test
-    public void shouldCalculateSeniorInterestFor60YearsOld() {
+    public void shouldCalculateSeniorInterest() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 60, 1), 5.5);
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(100, 61, 5), 27.5);
     }
 
     @Test
-    public void shouldCalculateZeroInterestIfBalanceIsZero() {
+    public void shouldCalculateZeroInterest() {
         assertInterest(InterestCalculatorTestHelper.makeAccountDetails(0, 60, 5), 0);
     }
 

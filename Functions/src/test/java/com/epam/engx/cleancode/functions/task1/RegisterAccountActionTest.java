@@ -13,7 +13,7 @@ public class RegisterAccountActionTest {
     private final ValidAccountMock validAccountMock = new ValidAccountMock();
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         accountManagerMock = new AccountManagerMock();
         registerAccountAction.setAccountManager(accountManagerMock);
         registerAccountAction.setPasswordChecker(new OkPasswordChecker());
